@@ -1,3 +1,134 @@
-/* 
-    General Styles used on every website (Don't Repeat Yourself)
-*/
+.page {
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.productList {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.product {
+  border: 1px solid #ccc;
+  /* padding: 10px; */
+  margin-bottom: 10px;
+  border-radius: 5px;
+  /* width: 50%; */
+  max-width: 300px;
+  text-align: center;
+}
+
+.checkout-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkout-button:hover {
+  background-color: #005bb5;
+}
+
+.cartIcon {
+  display: flex;
+  justify-content: flex-end;
+  /* position: fixed; */
+  top: 10px;
+  right: 10px;
+}
+
+/* .cartIcon a {
+  font-size: 30px;
+} */
+
+.cart {
+  position: relative;
+  cursor: pointer;
+}
+
+.cartDropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 40vw;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.removeItem {
+  cursor: pointer;
+  color: red;
+}
+
+.price {
+  margin: 0 !important;
+}
+
+.addToCart {
+  cursor: pointer;
+  margin: 10px 0;
+  border-radius: 3px;
+}
+
+.addToCart:hover {
+  background-color: yellow;
+}
+
+.remove {
+  cursor: pointer;
+  margin: 10px 0;
+  border-radius: 3px;
+}
+
+.remove:hover {
+  background-color: rgb(242, 103, 43);
+}
+
+.cartDiv {
+  width: 250px;
+}
+
+.cartDiv ul {
+  padding: 0;
+}
+
+.cartDiv ul li {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkoutPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+.total {
+  margin: 20px 0;
+  text-align: end;
+}
+
+.backButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}

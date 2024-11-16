@@ -1,22 +1,77 @@
-"""
-This module takes care of starting the API Server, Loading the DB and Adding the endpoints
-"""
-from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
-from api.utils import generate_sitemap, APIException
-from flask_cors import CORS
+import os
+from flask import Blueprint, request, jsonify
+import stripe
 
-api = Blueprint('api', __name__)
+# Initialize Stripe
 
-# Allow CORS requests to this API
-CORS(api)
+stripe.api_key = os.environ.get("REACT_APP_STRIPE_SECRET_KEY")
+
+# Create a Blueprint
+api = Blueprint("api", __name__)
+
+YOUR_DOMAIN = "http://localhost:3000/"
 
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
+@api.route("/test", methods=["GET"])
+def test():
+    return jsonify({"message": "Backend is running!"})
 
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
 
-    return jsonify(response_body), 200
+@api.route("/create-checkout-session", methods=["POST"])
+def create_checkout_session():
+    print("Received request to /create-checkout-session")
+    try:
+        data = request.get_json()  # Parse the JSON payload from frontend
+        cart = data.get("cart")
+
+        if not cart or not isinstance(cart, list):
+            return jsonify({"error": "Cart must be a non-empty array"}), 400
+
+        # Create line items for each product in the cart
+        line_items = [
+            {
+                "price": item["stripePriceId"],  # Use stripePriceId from the cart
+                "quantity": 1,  # Each product is added once
+            }
+            for item in cart
+        ]
+
+        # Create a Checkout Session
+        session = stripe.checkout.Session.create(
+            payment_method_types=["card"],
+            line_items=line_items,
+            mode="subscription",  # Change mode to payment
+            success_url=YOUR_DOMAIN + "return?session_id={CHECKOUT_SESSION_ID}",
+            cancel_url=YOUR_DOMAIN + "checkout",
+        )
+
+        print(f"Session created with ID: {session.id}")
+        return jsonify({"sessionId": session.id})  # Return the sessionId
+    except Exception as e:
+        print(f"Error creating checkout session: {e}")
+        return jsonify({"error": str(e)}), 400
+
+
+@api.route("/session-status", methods=["GET"])
+def session_status():
+    session_id = request.args.get("session_id")
+    print(f"Session ID received: {session_id}")
+
+    if not session_id:
+        return jsonify({"error": "session_id is required"}), 400
+
+    try:
+        session = stripe.checkout.Session.retrieve(session_id)
+        print(f"Retrieved session: {session}")
+        return jsonify(
+            status=session.status,
+            customer_email=(
+                session.customer_details.email if session.customer_details else None
+            ),
+        )
+    except stripe.error.InvalidRequestError as e:
+        print(f"Stripe InvalidRequestError: {e}")
+        return jsonify({"error": "Invalid session_id"}), 400
+    except Exception as e:
+        print(f"General error retrieving session: {e}")
+        return jsonify({"error": str(e)}), 500
