@@ -49,8 +49,6 @@ const CheckoutForm = () => {
       if (!data.sessionId) {
         throw new Error("sessionId not found in the backend response.");
       }
-
-      // Redirect to Stripe Checkout
       const result = await stripe.redirectToCheckout({
         sessionId: data.sessionId,
       });
