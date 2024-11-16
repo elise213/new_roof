@@ -66,19 +66,6 @@ const Home = () => {
           </div>
         ))}
       </div>
-
-      <Routes>
-        <Route
-          path="/checkout"
-          element={
-            store.cart.length > 0 ? (
-              <CheckoutForm />
-            ) : (
-              <p>Your cart is empty. Add an item to proceed.</p>
-            )
-          }
-        />
-      </Routes>
     </div>
   );
 };
