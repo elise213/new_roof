@@ -3,6 +3,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Context } from "../store/appContext";
 import styles from "../../styles/index.css";
 import { Footer } from "../component/footer";
+import { Avatar, Menu, MenuItem, IconButton, Button } from "@mui/material";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 // Load Stripe
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
@@ -67,7 +69,9 @@ const CheckoutForm = () => {
   return (
     <div className="checkoutPage">
       <a href="/">
-        <button className="backButton">Back to Shop</button>
+        <Button startIcon={<ArrowBackIosIcon />} className="backButton">
+          Back to Shop
+        </Button>
       </a>
 
       {store.cart.length > 0 ? (
@@ -75,13 +79,14 @@ const CheckoutForm = () => {
           <ul>
             {store.cart.map((item, index) => (
               <li key={index}>
-                <span className="price-checkout">${item.price}</span>
-                <img
+                {/* <img
                   className="city-image-cart"
                   src={item.image}
                   alt={item.name}
-                ></img>
+                ></img> */}
 
+                <span className="name-checkout">{item.name} Housing Group</span>
+                <span className="price-checkout">${item.price}</span>
                 <button
                   className="remove-cart"
                   onClick={() => actions.removeFromCart(item.id)}
@@ -104,13 +109,18 @@ const CheckoutForm = () => {
             />
             <span className="terms">
               By checking this box you agree to the{" "}
-              <a href="/terms">terms of subscription </a> and rules of the
-              group. Please accept the terms to proceed.
+              <a href="/terms">rules and terms</a> of the subscription/group.{" "}
+              {"  "}
+              {!isChecked && "Please accept the terms to proceed."}
             </span>
           </div>
 
           {isChecked ? (
-            <button className="proceed" onClick={handleCheckout}>
+            <button
+              className="addToCart"
+              style={{ borderRadius: "4px" }}
+              onClick={handleCheckout}
+            >
               Proceed to Payment
             </button>
           ) : (

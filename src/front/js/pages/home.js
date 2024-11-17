@@ -7,6 +7,7 @@ import miami from "/public/RH_MI2.png";
 import newyork from "/public/RH_NY4.jpg";
 import losangeles from "/public/RH_LA4.png";
 import { Footer } from "../component/footer";
+import whatsApp from "/public/WhatsApp.svg.png";
 
 const products = [
   {
@@ -18,7 +19,7 @@ const products = [
   },
   {
     id: 2,
-    name: losangeles,
+    name: "Los Angeles",
     image: losangeles,
     price: 25,
     stripePriceId: "price_1Q0AUyFOQNBOjDBoLQShBVIX",
@@ -50,6 +51,7 @@ const Home = () => {
         {products.map((product) => (
           <div className="product" key={product.id}>
             <span className="price">${product.price}</span>
+            {/* <img className="whats" src={whatsApp}></img> */}
             <img
               className="city-image"
               src={product.image}

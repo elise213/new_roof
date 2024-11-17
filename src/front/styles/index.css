@@ -15,7 +15,7 @@
 }
 
 .product {
-  border: 1px solid #ccc;
+  border: 2px solid black;
   border-radius: 4px;
   text-align: center;
   background-color: #fff;
@@ -50,6 +50,7 @@
 .cartIcon a {
   font-size: 30px;
   text-decoration: none;
+  color: black;
 }
 
 .cart {
@@ -83,6 +84,9 @@
   cursor: pointer;
   color: red;
 }
+.remove-cart:hover {
+  color: maroon;
+}
 
 .price {
   margin: 0 5px;
@@ -92,13 +96,13 @@
 
 .price-checkout {
   margin: 5px 10px;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .addToCart:hover {
   /* background-color: rgb(245, 243, 184); */
-  background-color: rgb(150, 150, 150);
-  color: rgb(247, 215, 36);
+  background-color: rgb(181, 245, 181);
+  color: rgb(32, 113, 45);
   transition: 1s;
 }
 
@@ -108,7 +112,7 @@
 
 .remove:hover {
   background-color: rgb(150, 150, 150);
-  color: rgb(247, 215, 36);
+  color: black;
   transition: 1s;
 }
 
@@ -116,20 +120,20 @@
 .remove,
 .proceed {
   cursor: pointer;
-  margin: 0 10px;
-  border-radius: 3px;
+  margin: 15px 0 0 0;
+  /* border-radius: 3px; */
   font-size: 12px;
+  width: 100%;
+  border-radius: 3px 3px 0 0;
 }
 
 .addToCart {
-  border: none;
-  border: 1px solid gray;
+  border: 1px solid black;
 }
 
 .remove {
   border: none;
-  /* border: 1px solid white; */
-  border: 1px solid gray;
+  border: 1px solid rgb(32, 113, 45);
 }
 
 .remove-cart {
@@ -137,9 +141,12 @@
   background-color: transparent;
   color: red;
   font-size: 15px;
-  position: absolute;
-  margin: 5px 0 0 139px;
+  margin-bottom: 10px;
   padding: 0;
+}
+
+.checkoutPage a {
+  align-self: flex-start;
 }
 
 .cartDiv {
@@ -158,23 +165,29 @@
 
 .cartDiv ul li {
   display: flex;
-  /* margin-top: 20px;
-  justify-content: space-between;
-  align-items: center; */
+  align-items: center;
 }
 
 .checkoutPage {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-  margin-top: 50px;
+  justify-content: space-between;
+  /* margin-top: 50px; */
   font-size: 14px;
+  height: 100vh;
+}
+
+.whats {
+  width: 40px;
+  margin: 5px;
 }
 
 .total {
-  margin: 20px 0;
+  border-top: 1px solid black;
+  /* margin: 10px 0; */
   text-align: end;
+  padding-top: 10px;
 }
 
 .backButton {
@@ -257,6 +270,7 @@ footer {
 .footer-div-2 {
   width: 100%;
   justify-content: flex-end;
+  align-items: end;
 }
 
 .footer-div-1,
@@ -283,7 +297,8 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 30px;
+  align-items: center;
+  /* margin-bottom: 30px; */
   width: 100px;
 }
 
@@ -300,6 +315,7 @@ footer {
 
 .socials a {
   text-align: center;
+  align-self: center !important;
 }
 
 .sitemap {
@@ -337,6 +353,7 @@ footer {
   .productList {
     flex-direction: column;
     align-items: center;
+    margin-bottom: 30px;
   }
   .product {
     margin: 5px;
