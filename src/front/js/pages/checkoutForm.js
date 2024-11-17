@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Context } from "../store/appContext";
 import styles from "../../styles/index.css";
+import { Footer } from "../component/footer";
 
 // Load Stripe
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
@@ -74,12 +75,19 @@ const CheckoutForm = () => {
           <ul>
             {store.cart.map((item, index) => (
               <li key={index}>
-                {item.name} - ${item.price}
+                <span className="price-checkout">${item.price}</span>
+                <img
+                  className="city-image-cart"
+                  src={item.image}
+                  alt={item.name}
+                ></img>
+
                 <button
-                  className="remove"
+                  className="remove-cart"
                   onClick={() => actions.removeFromCart(item.id)}
+                  title={`Remove ${item.name} from your cart`}
                 >
-                  Remove
+                  X
                 </button>
               </li>
             ))}
@@ -90,28 +98,29 @@ const CheckoutForm = () => {
           <div className="termsDiv">
             <input
               type="checkbox"
-              id="terms"
+              className="terms_checkbox"
               checked={isChecked}
               onChange={() => setIsChecked(!isChecked)}
             />
-            <label htmlFor="terms">
+            <span className="terms">
               By checking this box you agree to the{" "}
-              <a href="/terms">terms of subscription</a> and{" "}
-              <a href="/rules">rules of the group</a>.
-            </label>
+              <a href="/terms">terms of subscription </a> and rules of the
+              group. Please accept the terms to proceed.
+            </span>
           </div>
 
           {isChecked ? (
-            <button className="addToCart" onClick={handleCheckout}>
+            <button className="proceed" onClick={handleCheckout}>
               Proceed to Payment
             </button>
           ) : (
-            <p>Please accept the terms to proceed.</p>
+            <p></p>
           )}
         </div>
       ) : (
         <p>Your cart is empty.</p>
       )}
+      <Footer />
     </div>
   );
 };

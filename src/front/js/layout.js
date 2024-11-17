@@ -5,9 +5,10 @@ import ScrollToTop from "./component/scrollToTop";
 import Home from "./pages/home";
 import CheckoutForm from "./pages/checkoutForm";
 import injectContext from "./store/appContext";
+import TermsAndConditions from "./pages/termsAndConditions";
 
 // import { Navbar } from "./component/navbar";
-// import { Footer } from "./component/footer";
+import { Footer } from "./component/footer";
 
 const Layout = () => {
   const basename = process.env.BASENAME || "";
@@ -15,15 +16,15 @@ const Layout = () => {
   return (
     <div>
       <BrowserRouter basename={basename}>
-        <ScrollToTop>
-          {/* <Navbar /> */}
-          <Routes>
-            <Route element={<Home />} path="/" />
-            <Route element={<CheckoutForm />} path="/checkout/" />
-            <Route element={<h1>Not found!</h1>} />
-          </Routes>
-          {/* <Footer /> */}
-        </ScrollToTop>
+        {/* <ScrollToTop> */}
+        {/* <Navbar /> */}
+        <Routes>
+          <Route element={<Home />} path="/" />
+          <Route element={<CheckoutForm />} path="/checkout/" />
+          <Route element={<TermsAndConditions />} path="/terms/" />
+        </Routes>
+        {/* <Footer /> */}
+        {/* </ScrollToTop> */}
       </BrowserRouter>
     </div>
   );

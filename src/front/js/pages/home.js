@@ -3,26 +3,30 @@ import { Route, Routes, Link } from "react-router-dom";
 import CheckoutForm from "./checkoutForm";
 import { Context } from "../store/appContext";
 import styles from "../../styles/index.css";
+import miami from "/public/RH_MI2.png";
+import newyork from "/public/RH_NY4.jpg";
+import losangeles from "/public/RH_LA4.png";
+import { Footer } from "../component/footer";
 
 const products = [
   {
     id: 1,
     name: "New York",
-    image: "/RH_NY2.png",
+    image: newyork,
     price: 25,
     stripePriceId: "price_1Q0AOfFOQNBOjDBoAfsHiP28",
   },
   {
     id: 2,
-    name: "LA",
-    image: "/RH_LA.png",
+    name: losangeles,
+    image: losangeles,
     price: 25,
     stripePriceId: "price_1Q0AUyFOQNBOjDBoLQShBVIX",
   },
   {
     id: 3,
     name: "Miami",
-    image: "/RH_MI.png",
+    image: miami,
     price: 25,
     stripePriceId: "price_1Q0ASpFOQNBOjDBoXfBS7u3U",
   },
@@ -35,37 +39,41 @@ const Home = () => {
     <div className="page">
       <div className="cart">
         <div className="cartIcon">
-          <Link to="/checkout">🛒 Checkout ({store.cart.length})</Link>
-          {store.cart.length > 0 && (
-            <button onClick={actions.clearCart}>Clear Cart</button>
-          )}
+          <Link to="/checkout">🛒 </Link>
+          <Link style={{ fontSize: "15px" }} to="/checkout">
+            ({store.cart.length})
+          </Link>
         </div>
       </div>
 
       <div className="productList">
         {products.map((product) => (
           <div className="product" key={product.id}>
+            <span className="price">${product.price}</span>
             <img
-              className="movie-modal-image"
+              className="city-image"
               src={product.image}
               alt={product.name}
             />
-            <p className="productPrice">${product.price}</p>
-            <button
-              className="addToCart"
-              onClick={() =>
-                store.cart.some((item) => item.id === product.id)
-                  ? actions.removeFromCart(product.id)
-                  : actions.addToCart(product)
-              }
-            >
-              {store.cart.some((item) => item.id === product.id)
-                ? "Remove from Cart"
-                : "Add to Cart"}
-            </button>
+            {store.cart.some((item) => item.id === product.id) ? (
+              <button
+                className="remove"
+                onClick={() => actions.removeFromCart(product.id)}
+              >
+                Remove from Cart
+              </button>
+            ) : (
+              <button
+                className="addToCart"
+                onClick={() => actions.addToCart(product)}
+              >
+                Add to Cart
+              </button>
+            )}
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

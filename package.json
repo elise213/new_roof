@@ -75,6 +75,7 @@
 	"dependencies": {
 		"@stripe/react-stripe-js": "^2.9.0",
 		"@stripe/stripe-js": "^4.10.0",
+		"material-design-icons": "^3.0.1",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
 		"react-dom": "^16.8.4",
