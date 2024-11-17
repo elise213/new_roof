@@ -1,10 +1,12 @@
 import os
 from flask import Blueprint, request, jsonify
 import stripe
+from dotenv import load_dotenv
 
+load_dotenv()
 # Initialize Stripe
 
-stripe.api_key = os.environ.get("REACT_APP_STRIPE_SECRET_KEY")
+stripe.api_key = os.environ.get("FLASK_APP_STRIPE_SECRET_KEY")
 
 # Create a Blueprint
 api = Blueprint("api", __name__)

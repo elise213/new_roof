@@ -24,7 +24,6 @@ app.url_map.strict_slashes = False
 
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-
 # database condiguration
 db_url = os.getenv("DATABASE_URL")
 if db_url is not None:
@@ -38,16 +37,11 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 MIGRATE = Migrate(app, db, compare_type=True)
 db.init_app(app)
 
-# add the admin
 setup_admin(app)
-
-# add the admin
 setup_commands(app)
 
 # Add all endpoints form the API with a "api" prefix
 app.register_blueprint(api, url_prefix="/api")
-
-# Handle/serialize errors like a JSON object
 
 
 @app.errorhandler(APIException)

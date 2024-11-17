@@ -9,6 +9,11 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 // Load Stripe
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
+console.log(
+  "Stripe Publishable Key:",
+  process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
+);
+
 const CheckoutForm = () => {
   const { store, actions } = useContext(Context);
   const [totalAmount, setTotalAmount] = useState(0);
@@ -79,12 +84,6 @@ const CheckoutForm = () => {
           <ul>
             {store.cart.map((item, index) => (
               <li key={index}>
-                {/* <img
-                  className="city-image-cart"
-                  src={item.image}
-                  alt={item.name}
-                ></img> */}
-
                 <span className="name-checkout">{item.name} Housing Group</span>
                 <span className="price-checkout">${item.price}</span>
                 <button
