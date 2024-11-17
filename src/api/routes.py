@@ -40,7 +40,8 @@ def create_checkout_session():
         session = stripe.checkout.Session.create(
             payment_method_types=["card"],
             line_items=line_items,
-            mode="subscription",  # Change mode to payment
+            mode="subscription",
+            phone_number_collection={"enabled": True},
             success_url=YOUR_DOMAIN + "return?session_id={CHECKOUT_SESSION_ID}",
             cancel_url=YOUR_DOMAIN + "checkout",
         )
