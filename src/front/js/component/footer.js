@@ -21,7 +21,7 @@ export const Footer = () => (
       <div className="footer-div-2">
         <div className="socials">
           <p>FOLLOW</p>
-          <a href="https://www.instagram.com/ccexarts?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+          <a href="https://www.instagram.com/ricky_eats_out/">
             <i className="fa-brands fa-instagram" />
           </a>
         </div>
