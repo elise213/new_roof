@@ -56,12 +56,14 @@ const Home = () => {
         {products.map((product) => (
           <div className="product" key={product.id}>
             <span className="price">${product.price}</span>
-            <img className="whats-1" src={product.wa}></img>
-            <img
-              className="city-image"
-              src={product.image}
-              alt={product.name}
-            />
+            <div className="home-group">
+              <img
+                className="city-image"
+                src={product.image}
+                alt={product.name}
+              ></img>
+              <img className="whats-1" src={product.wa}></img>
+            </div>
             {store.cart.some((item) => item.id === product.id) ? (
               <button
                 className="remove"

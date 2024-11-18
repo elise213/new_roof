@@ -117,7 +117,7 @@ const CheckoutForm = () => {
           {isChecked ? (
             <button
               className="addToCart"
-              style={{ borderRadius: "4px" }}
+              style={{ borderRadius: "4px", margin: "15px 0" }}
               onClick={handleCheckout}
             >
               Proceed to Payment
