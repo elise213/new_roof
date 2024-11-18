@@ -3,17 +3,20 @@ import { Route, Routes, Link } from "react-router-dom";
 import CheckoutForm from "./checkoutForm";
 import { Context } from "../store/appContext";
 import styles from "../../styles/index.css";
-import miami from "/public/RH_MI2.png";
-import newyork from "/public/RH_NY4.jpg";
-import losangeles from "/public/RH_LA4.png";
+import miami from "/public/RH_MI2.1.png";
+import newyork from "/public/RH_NY4.1.jpg";
+import losangeles from "/public/RH_LA4.1.png";
 import { Footer } from "../component/footer";
-import whatsApp from "/public/WhatsApp.svg.png";
+import whatsAppLA from "/public/WhatsAppLA.svg.png";
+import whatsAppNY from "/public/WhatsAppNY.svg.png";
+import whatsAppMI from "/public/WhatsAppMI.svg.png";
 
 const products = [
   {
     id: 1,
     name: "New York",
     image: newyork,
+    wa: whatsAppNY,
     price: 25,
     stripePriceId: "price_1Q0AOfFOQNBOjDBoAfsHiP28",
   },
@@ -21,6 +24,7 @@ const products = [
     id: 2,
     name: "Los Angeles",
     image: losangeles,
+    wa: whatsAppLA,
     price: 25,
     stripePriceId: "price_1Q0AUyFOQNBOjDBoLQShBVIX",
   },
@@ -28,6 +32,7 @@ const products = [
     id: 3,
     name: "Miami",
     image: miami,
+    wa: whatsAppMI,
     price: 25,
     stripePriceId: "price_1Q0ASpFOQNBOjDBoXfBS7u3U",
   },
@@ -51,7 +56,7 @@ const Home = () => {
         {products.map((product) => (
           <div className="product" key={product.id}>
             <span className="price">${product.price}</span>
-            {/* <img className="whats" src={whatsApp}></img> */}
+            <img className="whats-1" src={product.wa}></img>
             <img
               className="city-image"
               src={product.image}

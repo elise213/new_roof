@@ -15,7 +15,7 @@
 }
 
 .product {
-  border: 2px solid black;
+  border: 1px solid gray;
   border-radius: 4px;
   text-align: center;
   background-color: #fff;
@@ -178,6 +178,12 @@
   height: 100vh;
 }
 
+.whats-1 {
+  width: 120px;
+  margin: 10px 10px 0;
+  align-self: center;
+}
+
 .whats {
   width: 40px;
   margin: 5px;
@@ -203,8 +209,7 @@
 
 .city-image {
   width: 150px;
-  height: 200px;
-  margin-top: 20px;
+  height: 180px;
 }
 
 .city-image-cart {
