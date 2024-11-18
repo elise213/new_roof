@@ -11,7 +11,7 @@ stripe.api_key = os.environ.get("FLASK_APP_STRIPE_SECRET_KEY")
 # Create a Blueprint
 api = Blueprint("api", __name__)
 
-YOUR_DOMAIN = "http://localhost:3000/"
+YOUR_DOMAIN = "https://sample-service-name-zl0v.onrender.com/"
 
 
 @api.route("/test", methods=["GET"])
