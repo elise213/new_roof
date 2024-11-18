@@ -24,6 +24,7 @@ def create_checkout_session():
     print("Received request to /create-checkout-session")
     try:
         data = request.get_json()  # Parse the JSON payload from frontend
+        print("data", data)
         cart = data.get("cart")
 
         if not cart or not isinstance(cart, list):

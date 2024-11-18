@@ -107,8 +107,8 @@ const CheckoutForm = () => {
               onChange={() => setIsChecked(!isChecked)}
             />
             <span className="terms">
-              By checking this box you agree to the{" "}
-              <a href="/terms">rules and terms</a> of the subscription/group.{" "}
+              By checking this box you agree to the <a href="/terms">rules </a>{" "}
+              of the group, and <a href="/terms">terms </a> of the subscription.{" "}
               {"  "}
               {!isChecked && "Please accept the terms to proceed."}
             </span>
