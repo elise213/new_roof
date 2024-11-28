@@ -1,14 +1,16 @@
 import React from "react";
 import "../../styles/termsandconditions.css";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { Avatar, Menu, MenuItem, IconButton, Button } from "@mui/material";
 
 const TermsAndConditions = () => {
   return (
     <div className="terms-container">
       <a href="/checkout">
-        <button className="backButton">
-          <span className="material-symbols-outlined">arrow_back_ios</span>
-          Back to Chekcout
-        </button>
+        <Button className="backButton">
+          <ArrowBackIosIcon />
+          Back
+        </Button>
       </a>
       <div className="terms-header">
         <h1 className="terms-title">

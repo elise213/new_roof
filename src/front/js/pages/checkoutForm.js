@@ -96,9 +96,11 @@ const CheckoutForm = () => {
               </li>
             ))}
           </ul>
-
-          <p className="total">Total: ${totalAmount}</p>
-
+          <div className="total-div">
+            <span> (Billed Annually)</span>
+            <span className="total">Total: ${totalAmount}</span>
+          </div>
+          <br />
           <div className="termsDiv">
             <input
               type="checkbox"
@@ -107,10 +109,14 @@ const CheckoutForm = () => {
               onChange={() => setIsChecked(!isChecked)}
             />
             <span className="terms">
-              By checking this box you agree to the <a href="/terms">rules </a>{" "}
-              of the group, and <a href="/terms">terms </a> of the subscription.{" "}
-              {"  "}
-              {!isChecked && "Please accept the terms to proceed."}
+              It's important to understand the{" "}
+              {/* By checking this box you agree to the */}
+              <a href="/terms">rules and terms</a> of the group. {"  "}
+              <br />
+              <br />
+              By checking the box, you are agreeing to these terms.{" "}
+              {!isChecked &&
+                "Please check the box to proceed with your purchase."}
             </span>
           </div>
 

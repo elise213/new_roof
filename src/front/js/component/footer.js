@@ -18,14 +18,14 @@ export const Footer = () => (
           ACCOUNT / SUBSCRIPTION
         </a>
       </div>
-      <div className="footer-div-2">
+      {/* <div className="footer-div-2">
         <div className="socials">
           <p>FOLLOW</p>
           <a href="https://www.instagram.com/ricky_eats_out/">
             <i className="fa-brands fa-instagram" />
           </a>
         </div>
-      </div>
+      </div> */}
     </div>
     <p className="footer-text">HOMESHARING</p>
   </footer>

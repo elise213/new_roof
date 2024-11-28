@@ -2,6 +2,8 @@ import os
 from flask import Blueprint, request, jsonify
 import stripe
 from dotenv import load_dotenv
+from flask_migrate import Migrate
+
 
 load_dotenv()
 # Initialize Stripe
