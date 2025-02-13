@@ -9,24 +9,16 @@ export const Footer = () => (
       <div className="sitemap">
         <Link to="/">HOME</Link>
         <Link to="/terms">RULES & TERMS</Link>
-        <div>
+        <Link to="/">
           CONTACT
           <img className="whats" src={whatsApp}></img>
-        </div>
+        </Link>
 
         <a href="https://billing.stripe.com/p/login/5kA9BZ1aE7ZDgAo9AA">
-          ACCOUNT / SUBSCRIPTION
+          ACCOUNT
         </a>
       </div>
-      {/* <div className="footer-div-2">
-        <div className="socials">
-          <p>FOLLOW</p>
-          <a href="https://www.instagram.com/ricky_eats_out/">
-            <i className="fa-brands fa-instagram" />
-          </a>
-        </div>
-      </div> */}
     </div>
-    <p className="footer-text">HOMESHARING</p>
+    <p className="footer-text">RICKY'S HOMESHARING</p>
   </footer>
 );

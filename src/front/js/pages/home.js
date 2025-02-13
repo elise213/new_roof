@@ -44,7 +44,7 @@ const Home = () => {
   return (
     <div className="page">
       <div className="cart">
-        <span className="nav-title">HOMESHARING</span>
+        <span className="nav-title">RICKY'S HOMESHARING</span>
         <div className="cartIcon">
           <Link to="/checkout">🛒 </Link>
           <Link style={{ fontSize: "15px" }} to="/checkout">
