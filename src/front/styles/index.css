@@ -1,40 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
-/* @font-face {
+@font-face {
   font-family: "Neutraface Text";
-  src: url("./fonts/Neutraface-Text-Light.otf") format("opentype");
+  src: url("../fonts/Neutraface-Text-Light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Neutraface Text";
-  src: url("./fonts/Neutraface-Text-Light-Italic.otf") format("opentype");
+  src: url("../fonts/Neutraface-Text-Light-Italic.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Neutraface Text";
-  src: url("./fonts/Neutraface-Text-Book.otf") format("opentype");
+  src: url("../fonts/Neutraface-Text-Book.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Neutraface Text";
-  src: url("./fonts/Neutraface-Text-Book-Italic.otf") format("opentype");
+  src: url("../fonts/Neutraface-Text-Book-Italic.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Neutraface Text";
-  src: url("./public/fonts/Neutraface-Text-Demi.otf") format("opentype");
+  src: url("../fonts/Neutraface-Text-Demi.otf") format("opentype");
   font-weight: 500;
-  font-style: normal; */
-/* } */
+  font-style: normal;
+}
 
 @font-face {
   font-family: "Neutraface Text";
@@ -191,25 +191,22 @@
 }
 
 .nav-title {
-  font-size: 35px;
+  font-size: 30px;
   color: black;
-  /* font-family: "Lexend", sans-serif; */
   font-family: "Neutraface Text";
 }
 
 .addToCart {
-  /* border-top: 1px solid black; */
   background-color: #ffd4fa;
   margin: 3px;
   box-sizing: border-box;
-  width: 95%;
+  /* width: 95%; */
   border: 1px solid saddlebrown;
   align-self: center;
 }
 
 .addToCart:hover {
   background-color: rgb(248, 219, 144);
-  /* color: rgb(32, 113, 45); */
   transition: 1s;
 }
 
@@ -249,38 +246,17 @@
   align-self: flex-start;
 }
 
-.cartDiv {
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-}
-
-.cartDiv ul {
-  padding: 0;
-  /* justify-content: flex-end; */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.cartDiv ul li {
-  display: flex;
-  align-items: center;
-}
-
 .checkoutPage {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  /* margin-top: 50px; */
-  font-size: 14px;
+  font-size: 12px;
   height: 100vh;
 }
 
 .whats-1 {
   width: 120px;
-  /* margin: 10px 10px 0; */
   align-self: center;
 }
 
@@ -289,12 +265,33 @@
   margin: 5px;
 }
 
+.cartDiv {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartDiv ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.cartDiv ul li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .total-div {
   border-top: 1px solid black;
   margin: 10px 0;
   padding-top: 10px;
   justify-content: space-between;
   display: flex;
+  color: red;
 }
 
 .total {
@@ -307,6 +304,7 @@
   left: 10px;
   border: none;
   background-color: transparent !important;
+  font-size: 12px;
 }
 
 .backButton:hover {

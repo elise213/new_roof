@@ -85,22 +85,24 @@ const CheckoutForm = () => {
             {store.cart.map((item, index) => (
               <li key={index}>
                 <span className="name-checkout">{item.name} Housing Group</span>
-                <span className="price-checkout">${item.price}</span>
-                <button
-                  className="remove-cart"
-                  onClick={() => actions.removeFromCart(item.id)}
-                  title={`Remove ${item.name} from your cart`}
-                >
-                  X
-                </button>
+                <div>
+                  <span className="price-checkout">${item.price}</span>
+                  <button
+                    className="remove-cart"
+                    onClick={() => actions.removeFromCart(item.id)}
+                    title={`Remove ${item.name} from your cart`}
+                  >
+                    X
+                  </button>
+                </div>
               </li>
             ))}
           </ul>
           <div className="total-div">
-            <span> (Billed Annually)</span>
+            <span> Billed Annually</span>
             <span className="total">Total: ${totalAmount}</span>
           </div>
-          <br />
+
           <div className="termsDiv">
             <input
               type="checkbox"
@@ -110,10 +112,7 @@ const CheckoutForm = () => {
             />
             <span className="terms">
               It's important to understand the{" "}
-              {/* By checking this box you agree to the */}
               <a href="/terms">rules and terms</a> of the group. {"  "}
-              <br />
-              <br />
               By checking the box, you are agreeing to these terms.{" "}
               {!isChecked &&
                 "Please check the box to proceed with your purchase."}
@@ -129,7 +128,7 @@ const CheckoutForm = () => {
               Proceed to Payment
             </button>
           ) : (
-            <p></p>
+            ""
           )}
         </div>
       ) : (
