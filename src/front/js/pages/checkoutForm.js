@@ -111,11 +111,11 @@ const CheckoutForm = () => {
               onChange={() => setIsChecked(!isChecked)}
             />
             <span className="terms">
-              It's important to understand the{" "}
+              To proceed with your purchase, it's important to understand the{" "}
               <a href="/terms">rules and terms</a> of the group. {"  "}
-              By checking the box, you are agreeing to these terms.{" "}
-              {!isChecked &&
-                "Please check the box to proceed with your purchase."}
+              By checking this box, you are agreeing to these terms.{" "}
+              {/* {!isChecked &&
+                "Please check the box to proceed with your purchase."} */}
             </span>
           </div>
 

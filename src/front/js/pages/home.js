@@ -68,17 +68,24 @@ const Home = () => {
                 </div>
               </div>
               {store.cart.some((item) => item.id === product.id) ? (
-                // <button
-                //   className="remove"
-                //   onClick={() => actions.removeFromCart(product.id)}
-                // >
-                //   Remove from Cart
-                // </button>
-                <></>
+                <>
+                  {/* <button
+               className="remove"
+                onClick={() => actions.removeFromCart(product.id)}
+               >
+                Remove from Cart
+            </button> */}
+                  <span className="in-cart-text">* In your cart</span>
+                </>
               ) : (
                 <button
                   className="addToCart"
                   onClick={() => actions.addToCart(product)}
+                  style={{
+                    borderRight: "none",
+                    borderLeft: "none",
+                    borderBottom: "none",
+                  }}
                 >
                   Add to Cart
                 </button>

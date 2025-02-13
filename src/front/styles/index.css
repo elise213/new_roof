@@ -101,7 +101,7 @@
 }
 
 .product {
-  border: 1px solid gray;
+  border: 1px solid saddlebrown;
   border-radius: 4px;
   text-align: center;
   background-color: #fff;
@@ -167,9 +167,6 @@
   cursor: pointer;
   color: red;
 }
-.remove-cart:hover {
-  color: maroon;
-}
 
 .price {
   margin: 0 5px;
@@ -197,10 +194,8 @@
 }
 
 .addToCart {
-  background-color: #ffd4fa;
-  margin: 3px;
+  background-color: #e7d4ff;
   box-sizing: border-box;
-  /* width: 95%; */
   border: 1px solid saddlebrown;
   align-self: center;
 }
@@ -237,9 +232,12 @@
   border: none;
   background-color: transparent;
   color: red;
-  font-size: 15px;
-  margin-bottom: 10px;
+  font-size: 8px;
+  margin-bottom: 5px;
   padding: 0;
+}
+.remove-cart:hover {
+  color: maroon;
 }
 
 .checkoutPage a {
@@ -262,9 +260,14 @@
 
 .whats {
   width: 25px;
-  margin: 5px;
+  margin: 0 0 0 5px;
+  position: absolute;
 }
 
+.in-cart-text {
+  font-size: 12px;
+  color: rgb(110, 135, 143);
+}
 .cartDiv {
   width: 250px;
   display: flex;
@@ -276,6 +279,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin: 0;
 }
 
 .cartDiv ul li {
@@ -304,12 +308,15 @@
   left: 10px;
   border: none;
   background-color: transparent !important;
-  font-size: 12px;
+  font-size: 12px !important;
 }
 
 .backButton:hover {
   color: blue;
   background-color: transparent !important;
+}
+.backButton span {
+  margin: 0;
 }
 
 .city-image {
@@ -341,6 +348,7 @@
 
 .termsDiv {
   display: flex;
+  margin-top: 40px;
 }
 
 .terms {
