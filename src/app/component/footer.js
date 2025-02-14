@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import "../styles/page.css";
 
 export const Footer = () => (
   <footer className="footer">

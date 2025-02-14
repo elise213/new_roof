@@ -1,7 +1,6 @@
 "use client"; // Required for stateful components
 import { useContext } from "react";
 import Link from "next/link";
-import "./styles/page.css";
 import { Context } from "./store/appContext";
 import { Footer } from "./component/footer";
 import Image from "next/image";
@@ -45,12 +44,9 @@ export default function Home() {
         <div className="cartIcon">
           <Link href="/checkout">
             🛒
-            {/* <Link href="/checkout" className="cart-number">
-            {store.cart.length}
-          </Link> */}
-            {store.cart.length > 0 && (
+            {/* {store.cart.length > 0 && (
               <button className="go-to-cart">GO TO CART </button>
-            )}
+            )} */}
           </Link>
         </div>
       </div>
@@ -62,15 +58,15 @@ export default function Home() {
             <div className="home-group">
               <div className="card-top">
                 <span className="price">${product.price}</span>
-                <p className="one-year-text">One Year!</p>
+                <p className="one-year-text">Annual Subscription!</p>
               </div>
               <div className="group-div">
                 <div className="city-image">{product.image}</div>
                 <div className="product-text-div">
                   <p className="product-card-text">{product.name}</p>
-                  <p className="product-card-text">
+                  {/* <p className="product-card-text">
                     Housing Group Subscription
-                  </p>
+                  </p> */}
                 </div>
               </div>
               {/* Display WhatsApp Image */}
